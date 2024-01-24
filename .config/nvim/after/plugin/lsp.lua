@@ -27,11 +27,19 @@ require('mason-lspconfig').setup({
   handlers = {
     lsp_zero.default_setup,
     lua_ls = function()
-      local lua_opts = lsp_zero.nvim_lua_ls()
-      require('lspconfig').lua_ls.setup(lua_opts)
+        local lspconfig = require('lspconfig');
+        local lua_opts = lsp_zero.nvim_lua_ls()
+        lspconfig.lua_ls.setup(lua_opts)
     end,
   }
 })
+
+local lspconfig = require('lspconfig');
+lspconfig.flow.setup{}
+lspconfig.tsserver.setup{
+    filetypes = { "typescript", "typescriptreact", "typescript.tsx" }
+}
+lspconfig.metals.setup{}
 
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
