@@ -7,10 +7,10 @@ return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
-    use "nvim-lua/plenary.nvim"
+    use 'nvim-lua/plenary.nvim'
 
     use {
-        "ThePrimeagen/harpoon",
+        'ThePrimeagen/harpoon',
         branch = "harpoon2",
         requires = { {"nvim-lua/plenary.nvim"} }
     }
@@ -68,11 +68,9 @@ return require('packer').startup(function(use)
 
     use 'goolord/alpha-nvim'
 
-    use {
-        'numToStr/Comment.nvim',
-    }
+    use 'numToStr/Comment.nvim'
 
-    use {
-        "folke/which-key.nvim",
-    }
+    use 'folke/which-key.nvim'
+
+    use 'ggandor/leap.nvim'
 end)
