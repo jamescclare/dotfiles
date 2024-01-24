@@ -1,5 +1,8 @@
 # cargo
-export PATH="$HOME/.cargo/bin:$PATH"
+# export PATH="$HOME/.cargo/bin:$PATH"
+
+# python3
+export PATH="`python3 -m site --user-base`/bin:$PATH"
 
 # nvm
 export NVM_DIR=~/.nvm
