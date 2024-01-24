@@ -7,6 +7,14 @@ return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
+    use "nvim-lua/plenary.nvim"
+
+    use {
+        "ThePrimeagen/harpoon",
+        branch = "harpoon2",
+        requires = { {"nvim-lua/plenary.nvim"} }
+    }
+
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.5',
         -- or                            , branch = '0.1.x',
@@ -60,5 +68,35 @@ return require('packer').startup(function(use)
 
     use 'goolord/alpha-nvim'
 
-    use 'ThePrimeagen/vim-be-good'
+    use {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
+    }
+
+    use {
+        "folke/which-key.nvim",
+        config = function()
+            vim.o.timeout = true
+            vim.o.timeoutlen = 300
+            require("which-key").setup{
+                plugins = {
+                    marks = true,
+                    spelling = {
+                        enabled = true,
+                        suggestions = 20,
+                    },
+                    presets = {
+                        g = true
+                    },
+                },
+                operators = { gc = "Comments" },
+                popup_mappings = {
+                    scroll_down = "<c-d>", -- binding to scroll down inside the popup
+                    scroll_up = "<c-u>", -- binding to scroll up inside the popup
+                },
+            }
+        end
+    }
 end)
