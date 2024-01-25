@@ -8,18 +8,20 @@ else
     selected=$(find ~/Code -mindepth 1 -maxdepth 1 -type d | fzf)
 fi
 
-if [[ -z $selected ]]; then
+if [[ -z $selected ]] || [[ ! -d $selected ]]; then
+    echo "Invalid project path"
     exit 0
 fi
 
 selected_name=$(basename "$selected" | tr . _)
 tmux_running=$(pgrep tmux)
 
-if ! tmux has-session -t=$selected_name 2> /dev/null; then
+if ! tmux has-session -t=$selected_name; then
     # Setup my tmux session how I like it.
     tmux new-session -d -s $selected_name -c $selected nvim
-    tmux new-window -t $selected_name: -d
-    tmux new-window -t $selected_name: -d lazygit
+    tmux new-window -t $selected_name: -c $selected -d
+    tmux new-window -t $selected_name: -c $selected -d -n git lazygit
+    tmux new-window -t $selected_name: -c $selected -d -n docker lazydocker
 fi
 
 # If we're not in tmux, attach.
