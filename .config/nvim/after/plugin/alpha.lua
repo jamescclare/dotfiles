@@ -41,7 +41,7 @@ dashboard.section.buttons.val = {
 dashboard.section.header.opts.hl = "AlphaHeader"
 
 -- Adjust default padding of dashboard theme.
-dashboard.config.layout[1].val = 8
+dashboard.config.layout[1].val = 25
 dashboard.config.layout[3].val = 4
 
 alpha.setup(dashboard.config)

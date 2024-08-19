@@ -20,8 +20,9 @@ if ! tmux has-session -t=$selected_name; then
     # Setup my tmux session how I like it.
     tmux new-session -d -s $selected_name -c $selected nvim
     tmux new-window -t $selected_name: -c $selected -d
-    tmux new-window -t $selected_name: -c $selected -d -n git lazygit
-    tmux new-window -t $selected_name: -c $selected -d -n docker lazydocker
+    # This is eating a bunch of CPU, disabled for now.
+    # tmux new-window -t $selected_name: -c $selected -d -n git lazygit
+    # tmux new-window -t $selected_name: -c $selected -d -n docker lazydocker
 fi
 
 # If we're not in tmux, attach.
