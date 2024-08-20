@@ -66,6 +66,16 @@ return require('packer').startup(function(use)
         as = 'papercolor',
     }
 
+    use {
+        'joshdick/onedark.vim',
+        as = 'onedark'
+    }
+
+    use {
+        'sainnhe/everforest',
+        as = 'everforest'
+    }
+
     use 'goolord/alpha-nvim'
 
     use 'numToStr/Comment.nvim'
