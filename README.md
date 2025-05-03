@@ -1,9 +1,10 @@
 # .dotfiles #
 
 **Setup**
-- Run `curl https://raw.githubusercontent.com/jamescclare/dotfiles/master/scripts/setup-dotfiles | bash`
-
-**Dependancies**
+- Run 
+```
+curl https://raw.githubusercontent.com/jamescclare/dotfiles/master/scripts/setup-dotfiles | bash
+```
 - Install brew dependancies
 ```
 brew install zsh tmux nvim ripgrep fzf nvm
