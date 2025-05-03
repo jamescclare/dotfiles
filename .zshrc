@@ -24,7 +24,7 @@ autoload -U colors && colors
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git 
 zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:git*' formats "(%{$fg[cyan]%}%b%{$reset_color%}) "
+zstyle ':vcs_info:git*' formats "(%{$fg[/"#A7C080/"]%}%b%{$reset_color%}) "
 precmd() {
     vcs_info
 }
