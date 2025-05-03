@@ -1,5 +1,4 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "File tree (netrw)" })
 
 vim.g.netrw_banner = 0
 

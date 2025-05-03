@@ -80,8 +80,6 @@ return require('packer').startup(function(use)
 
     use 'numToStr/Comment.nvim'
 
-    use 'ggandor/leap.nvim'
-    
     use {
         'nvim-tree/nvim-tree.lua',
         requires = {
