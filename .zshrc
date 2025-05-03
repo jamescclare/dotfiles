@@ -24,7 +24,7 @@ autoload -U colors && colors
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git 
 zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:git*' formats "(%{$fg[/"#A7C080/"]%}%b%{$reset_color%}) "
+zstyle ':vcs_info:git*' formats "(%{%F{#A7C080}%}%b%{%f%}) "
 precmd() {
     vcs_info
 }
@@ -34,3 +34,5 @@ PROMPT='%~ ${vcs_info_msg_0_} '
 # Use 'config' command to interact with dotfiles bare repo.
 alias config="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
