@@ -1,3 +1,5 @@
+bindkey -v
+
 export PATH=~/bin:$PATH 
 alias proj=~/scripts/openproj.sh
 alias wfs=~/scripts/wait-for-success
