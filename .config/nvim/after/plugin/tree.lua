@@ -7,7 +7,14 @@ require("nvim-tree").setup {
         open_file = {
             quit_on_open = true,
         }
-    }
+    },
+    git = {
+        enable = true,
+        ignore = false,
+    },
+    filters = {
+        git_ignored = false,
+    },
 }
 
 local api = require("nvim-tree.api")
