@@ -1,10 +1,10 @@
 local lsp_zero = require('lsp-zero')
+lsp_zero.preset('recommended')
+lsp_zero.setup()
 
-lsp_zero.on_attach(function(client, bufnr)
-  local opts = {buffer = bufnr, remap = false}
-
-  lsp_zero.default_keymaps({buffer = bufnr});
-end)
+vim.keymap.set("n", "K", function()
+  vim.lsp.buf.hover({ border = "rounded" })
+end, { silent = true })
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
